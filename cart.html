@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니 구현</title>
+</head>
+<body>
+    <div class="coffee">
+        <a href="coffee_detail/americano.html">
+            <img src="img/아메리카노.png" width="100" alt="">
+        </a>
+        <p id="Coffee_Name">아메리카노</p>
+        <p>가격 : <span id="a_price">2,000원</span></p>
+        <p>수량 : <span>20개</span></p>
+        <button onclick="showMenu()">주문</button>
+    </div>
+
+    <p><span id="Order_Coffee_Name"></span>(<span id="price"></span>원) 
+        수량 : <button id="down">-</button>
+        <span id="amount">1</span>
+        <button id="up">+</button>
+        금액 : <input type="text" id="total_price" value="0" readonly></p>
+</body>
+<script>
+    // 상품명과 가격을 설정
+    Coffee_Name = document.querySelector('#Coffee_Name').innerHTML
+    document.querySelector('#Order_Coffee_Name').innerHTML = Coffee_Name
+    
+    Coffee_Price = document.querySelector('#a_price').innerHTML
+    console.log(Coffee_Price)
+    Coffee_Price = Coffee_Price.replace(',', '');
+    Coffee_Price = Coffee_Price.replace('원', '');
+    document.querySelector('#price').innerHTML = Coffee_Price
+    
+    price = document.getElementById("price").innerHTML
+    amount = document.getElementById("amount").innerHTML
+    
+    up_button = document.querySelector('#up')
+    up_button.addEventListener('click', () => {
+        amount = document.getElementById("amount").innerHTML
+        amount ++
+        if (amount > 10){
+            amount = 10
+            alert('수량은 10개 이상 불가능합니다.')
+        }
+        document.getElementById("amount").innerHTML = amount
+        
+        total_price = price * amount    
+        document.getElementById("total_price").value = total_price;
+
+    }) // 새로운 이벤트 등록 함수
+    
+    down_button = document.querySelector('#down')
+    down_button.addEventListener('click', () => {
+        document.getElementById("amount").innerHTML
+        amount = document.getElementById("amount").innerHTML
+        
+        if (amount != 1){
+            amount --
+        } else {
+            alert('수량은 1개보다 작을 수 없습니다')
+        }
+
+        document.getElementById("amount").innerHTML = amount
+
+        total_price = price * amount    
+        document.getElementById("total_price").value = total_price;
+    })
+
+    total_price = price * amount
+    document.getElementById("total_price").value = total_price
+    
+    console.log(price*amount)
+    
+</script>
+</html>

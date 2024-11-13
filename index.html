@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="kor">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커피 키오스크</title>
+    <style>
+        #container {
+            width: 900px;
+            height: 900px;
+            margin: 0px auto;
+            padding: 30px;
+            margin-top: 50;
+            border: 1px solid purple;
+        }
+
+        #coffees {
+            width: 650px;
+            /* height: 500px; */
+            margin: 0px auto;
+            /* border: 1px solid red; */
+        }
+
+        .coffee {
+            width: 150px;
+            float: left;
+            /* display: inline-block; */
+            padding: 10px;
+            margin: 20px;
+            border: 1px solid purple;
+            border-radius: 10px;
+            background-color: plum;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1> 커피 주문기</h1>
+        <div id="coffees">
+            <div class="coffee">
+                <a href="coffee_detail/americano.html">
+                    <img src="img/아메리카노.png" width="100" alt="">
+                </a>
+                <p>아메리카노</p>
+                <p>가격 : <span>2,000원</span></p>
+                <p>수량 : <span>20개</span></p>
+                <button onclick="showMenu()">주문</button>
+            </div>
+            <div class="coffee">
+                <a href="coffee_detail/latte.html">
+                    <img src="img/라때.png" width="100" alt="">
+                </a>
+                <p>라때</p>
+                <p>가격 : <span>3,000원</span></p>
+                <p>수량 : <span>30개</span></p>
+                <button onclick="showMenu()">주문</button>
+            </div>
+            <div class="coffee">
+                <a href="coffee_detail/malcha.html">
+                    <img src="img/말차라때.png" width="100" alt="">
+                </a>
+                <p>말차라때</p>
+                <p>가격 : <span>3,500원</span></p>
+                <p>수량 : <span>61개</span></p>
+                <button onclick="showMenu()">주문</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+function showMenu(){
+    alert("말차라때 선택")
+}
+</script>
+
+</html>
